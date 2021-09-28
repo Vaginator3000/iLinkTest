@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="btn_size">55dp</dimen>
+    <dimen name="fab_size">55dp</dimen>
     <dimen name="img_size">190dp</dimen>
     <dimen name="cpv_loading_size">45dp</dimen>
+    <dimen name="fab_ic_size">45dp</dimen>
 </resources>

@@ -63,21 +63,23 @@
         android:layout_width="@dimen/cpv_loading_size"
         android:layout_height="@dimen/cpv_loading_size" />
 
-    <Button
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btn_duck"
-        android:text="duck"
-        android:layout_width="@dimen/btn_size"
-        android:layout_height="@dimen/btn_size"
+        app:maxImageSize="@dimen/fab_ic_size"
+        android:src="@drawable/ic_duck_btn"
+        android:layout_width="@dimen/fab_size"
+        android:layout_height="@dimen/fab_size"
         app:layout_constraintTop_toBottomOf="@id/imgs_bottom_barrier"
         app:layout_constraintStart_toEndOf="@id/btn_cat"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" />
 
-    <Button
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btn_cat"
-        android:text="cat"
-        android:layout_width="@dimen/btn_size"
-        android:layout_height="@dimen/btn_size"
+        app:maxImageSize="@dimen/fab_ic_size"
+        android:src="@drawable/ic_cat_btn"
+        android:layout_width="@dimen/fab_size"
+        android:layout_height="@dimen/fab_size"
         app:layout_constraintTop_toBottomOf="@id/imgs_bottom_barrier"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/btn_duck"
