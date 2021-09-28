@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dragient_list"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/imgs_bottom_barrier"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="img_duck, img_cat" />
+
+    <ImageView
+        android:id="@+id/img_duck"
+        android:scaleType="fitCenter"
+        android:visibility="gone"
+        android:layout_width="@dimen/img_size"
+        android:layout_height="@dimen/img_size"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/img_cat"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <ImageView
+        android:id="@+id/img_cat"
+        android:scaleType="fitCenter"
+        android:visibility="gone"
+        android:layout_width="@dimen/img_size"
+        android:layout_height="@dimen/img_size"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/img_duck"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <com.github.rahatarmanahmed.cpv.CircularProgressView
+        android:id="@+id/cpv_duck_loading"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="@id/img_duck"
+        app:layout_constraintStart_toStartOf="@id/img_duck"
+        app:layout_constraintEnd_toEndOf="@id/img_duck"
+        app:layout_constraintBottom_toBottomOf="@id/img_duck"
+        app:cpv_color="@color/purple_700"
+        app:cpv_animAutostart="true"
+        app:cpv_indeterminate="true"
+        android:layout_width="@dimen/cpv_loading_size"
+        android:layout_height="@dimen/cpv_loading_size" />
+
+    <com.github.rahatarmanahmed.cpv.CircularProgressView
+        android:id="@+id/cpv_cat_loading"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="@id/img_cat"
+        app:layout_constraintStart_toStartOf="@id/img_cat"
+        app:layout_constraintEnd_toEndOf="@id/img_cat"
+        app:layout_constraintBottom_toBottomOf="@id/img_cat"
+        app:cpv_color="@color/purple_700"
+        app:cpv_animAutostart="true"
+        app:cpv_indeterminate="true"
+        android:layout_width="@dimen/cpv_loading_size"
+        android:layout_height="@dimen/cpv_loading_size" />
+
+    <Button
+        android:id="@+id/btn_duck"
+        android:text="duck"
+        android:layout_width="@dimen/btn_size"
+        android:layout_height="@dimen/btn_size"
+        app:layout_constraintTop_toBottomOf="@id/imgs_bottom_barrier"
+        app:layout_constraintStart_toEndOf="@id/btn_cat"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <Button
+        android:id="@+id/btn_cat"
+        android:text="cat"
+        android:layout_width="@dimen/btn_size"
+        android:layout_height="@dimen/btn_size"
+        app:layout_constraintTop_toBottomOf="@id/imgs_bottom_barrier"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btn_duck"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
